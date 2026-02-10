@@ -4,8 +4,7 @@ import { Instagram, MessageCircle } from "lucide-react";
 
 export function Community() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      {/* Header de la sección */}
+    <section className="py-24 px-6 max-w-7xl -mt-12 mx-auto z-20">
       <div className="text-center mb-16 space-y-4">
         <motion.span 
           initial={{ opacity: 0 }}
@@ -13,7 +12,7 @@ export function Community() {
           className="text-sm font-bold tracking-widest uppercase"
           style={{ color: 'var(--secondary-text-color)' }}
         >
-          COMMUNITY
+          CONTACTO
         </motion.span>
         <motion.h2 
           initial={{ y: 20, opacity: 0 }}
@@ -25,8 +24,6 @@ export function Community() {
           Stay in the loop
         </motion.h2>
       </div>
-
-      {/* Grid de Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         {/* CARD INSTAGRAM */}
@@ -38,7 +35,6 @@ export function Community() {
           description="Follow our daily journey, see behind the scenes of our projects, and get design inspiration."
           buttonText="Follow us"
           buttonLink="https://instagram.com"
-          // Variables CSS definidas en globals.css
           bgColorVar="var(--card-ig-bg)"
           borderColorVar="var(--card-ig-border)"
         />
@@ -52,7 +48,6 @@ export function Community() {
           description="Have a project in mind? Chat directly with our team for a quick consultation or quote."
           buttonText="Contact us"
           buttonLink="https://wa.me/"
-          // Variables CSS definidas en globals.css
           bgColorVar="var(--card-wa-bg)"
           borderColorVar="var(--card-wa-border)"
         />
@@ -62,7 +57,6 @@ export function Community() {
   );
 }
 
-// Sub-componente actualizado para usar variables CSS de fondo
 function SocialCard({ 
   icon, 
   iconBg, 
@@ -79,7 +73,7 @@ function SocialCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.1 }}
       whileHover={{ y: -8 }}
       className="p-10 rounded-[32px] border transition-all duration-300 shadow-sm"
       style={{ 

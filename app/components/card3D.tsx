@@ -24,7 +24,7 @@ export function Card3D({ src, scrollYProgress }: CardProps) {
       className="w-full aspect-video rounded-3xl overflow-hidden border-1 border-white/10 bg-[#1a1615]"
     >
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-10" />
-      <p className="text-white text-sm z-20 bg-[var(--primary-color)] px-4 py-2 ">caquita</p>
+      <p className="text-white text-sm z-20 bg-[var(--primary-color)] px-4 py-2 ">manu puto</p>
       <img 
         src={src} 
         alt="Project Preview" 

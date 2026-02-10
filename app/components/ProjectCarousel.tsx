@@ -30,7 +30,7 @@ export function ProjectCarousel() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full max-w-7xl mx-auto px-4 -mt-12 pb-40 z-20"
+      className="relative w-full max-w-7xl mx-auto px-4 -mt-16 pb-40 z-20"
       style={{ perspective: "1500px" }}
     >
       <button onClick={() => scroll("left")} className="absolute left-6 top-1/3 z-40 p-4 rounded-full border backdrop-blur-md bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--primary-text-color)] hover:brightness-110 active:scale-95">

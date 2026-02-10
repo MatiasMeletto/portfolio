@@ -1,9 +1,27 @@
 "use client";
-import { Linkedin, Twitter, Instagram, Bold } from "lucide-react";
+import { Linkedin, Twitter, Moon, Sun } from "lucide-react";
+import { useState } from "react";
 
 export function Footer() {
+  const [theme, setTheme] = useState('dark');
+
+  const changeColor = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    setTheme(newTheme);
+  };
+
   return (
     <footer className="w-full px-4 pb-10 pt-20" style={{ backgroundColor: 'var(--bg-color)' }}>
+      {/* -------------------------------------------------TOGGLE TEMA------------------------------------------------------ */}
+      <button
+        onClick={changeColor}
+        className="fixed bottom-6 right-6 z-50 p-4 rounded-2xl transition-all shadow-2xl active:scale-95 flex items-center justify-center border border-white/10"
+        style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}
+      >
+        {theme === 'light' ? <Moon size={22} /> : <Sun size={22} />}
+      </button>
       <div 
         className="max-w-7xl mx-auto rounded-[40px] p-10 md:p-20 border"
         style={{ 
@@ -73,7 +91,6 @@ export function Footer() {
   );
 }
 
-// Sub-componentes para limpiar el código
 function SocialIcon({ icon }: { icon: React.ReactNode }) {
   return (
     <a 

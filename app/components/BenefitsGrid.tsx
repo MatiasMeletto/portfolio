@@ -29,7 +29,7 @@ export function BenefitsGrid() {
   ];
 
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto">
+    <section className="py-32 px-6 max-w-7xl mx-auto -mt-20 z-20">
       <motion.div 
         variants={container}
         initial="hidden"

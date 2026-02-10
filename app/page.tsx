@@ -9,15 +9,6 @@ import { StickyScroll } from "./components/StickyScroll";
 import { Community } from './components/Community';
 
 export default function Home() {
-  const [theme, setTheme] = useState('dark');
-
-  const changeColor = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    setTheme(newTheme);
-  };
-
   return (
     <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--primary-text-color)' }} className="min-h-screen flex flex-col transition-colors duration-300 overflow-x-hidden">
 
@@ -72,15 +63,6 @@ export default function Home() {
       <StickyScroll />
 
       <Community />
-
-      {/* -------------------------------------------------TOGGLE TEMA------------------------------------------------------ */}
-      <button
-        onClick={changeColor}
-        className="fixed bottom-6 right-6 z-50 p-4 rounded-2xl transition-all shadow-2xl active:scale-95 flex items-center justify-center border border-white/10"
-        style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}
-      >
-        {theme === 'light' ? <Moon size={22} /> : <Sun size={22} />}
-      </button>
     </div>
   );
 }

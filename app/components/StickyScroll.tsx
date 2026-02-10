@@ -13,7 +13,7 @@ export function StickyScroll() {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <section ref={targetRef} className="relative w-full max-w-7xl mx-auto px-6 py-32">
+    <section ref={targetRef} className="relative w-full max-w-7xl mx-auto px-6 py-32 -mt-20 z-20">
       <motion.div style={{ opacity }} className="flex flex-col md:flex-row gap-12 lg:gap-24">
 
         {/* -----------------------------------------COLUMNA IZQUIERDA----------------------------------------------- */}
