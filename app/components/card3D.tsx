@@ -4,14 +4,13 @@ import { motion, useTransform, MotionValue } from "framer-motion";
 interface CardProps {
   src: string;
   scrollYProgress: MotionValue<number>;
+  className?: string;
 }
 
-export function Card3D({ src, scrollYProgress }: CardProps) {
-  // Cuando el scroll está arriba (0), la tarjeta está inclinada 25 grados.
-  // A medida que scrolleas hacia abajo (hasta 0.6), se endereza a 0.
+export function Card3D({ src, scrollYProgress, className }: CardProps) {
   const rotateX = useTransform(scrollYProgress, [0, 0.6], [25, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.6], [0.85, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0.3, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.6], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0.5, 1]);
 
   return (
     <motion.div
@@ -19,16 +18,21 @@ export function Card3D({ src, scrollYProgress }: CardProps) {
         rotateX, 
         scale, 
         opacity,
-        transformStyle: "preserve-3d" 
+        transformStyle: "preserve-3d",
       }}
-      className="w-full aspect-video rounded-3xl overflow-hidden border-1 border-white/10 bg-[#1a1615]"
+      className={`w-full rounded-3xl overflow-hidden border border-white/10 bg-[#1a1615] shadow-2xl will-change-transform ${className || 'aspect-video'}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-10" />
-      <p className="text-white text-sm z-20 bg-[var(--primary-color)] px-4 py-2 ">manu puto</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-10" />
+      
+      <div className="absolute top-6 left-6 z-20 bg-[var(--primary-color)] px-4 py-2 rounded-full shadow-lg backdrop-blur-md border border-white/10">
+        <p className="text-white text-sm font-bold tracking-wide">Radiance Project</p>
+      </div>
+
       <img 
         src={src} 
         alt="Project Preview" 
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transform-gpu"
+        loading="lazy"
       />
     </motion.div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { Linkedin, Twitter, Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import { Logo } from "./Logo";
 
 export function Footer() {
   const [theme, setTheme] = useState('dark');
@@ -33,15 +34,8 @@ export function Footer() {
           
           {/* -------------------------------------------COLUMNA MARCA---------------------------------------------------- */}
           <div className="max-w-sm">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-[var(--primary-color)] rounded-lg flex items-center justify-center transform rotate-12">
-                 <div className="w-3 h-3 bg-white rounded-sm opacity-90" />
-              </div>
-              <span className="font-bold text-2xl tracking-tighter" style={{ color: 'var(--primary-text-color)' }}>
-                Radiance Devs
-              </span>
-            </div>
-            
+            <Logo />
+
             <p className="text-lg leading-relaxed mb-8 opacity-80" style={{ color: 'var(--secondary-text-color)' }}>
               Your favourite business management software. Built for early startup founders.
             </p>

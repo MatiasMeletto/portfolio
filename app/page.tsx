@@ -25,7 +25,7 @@ export default function Home() {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          RADIANCE DEVS
+          RADIANCE
         </motion.h1>
 
         <motion.h2
